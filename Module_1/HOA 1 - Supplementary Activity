@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- Web crawlet that helps for blind and can be heard (sound), that is why it is very crucial and essential -->
+<html>
+
+<!-- Head -->
+<head>
+  <title>Cars for Auction!</title>
+  <meta name = "description" content = "Current Status to auction high -end luxury cars.">
+  <meta charset="UTF-8">
+    <style>
+    img {
+      width: 500px;
+      height: 300px;
+      object-fit: cover;
+        body {
+    font-family: 'Roboto', Arial, sans-serif;}
+    }
+  </style>
+</head>
+
+<!-- Body -->
+<body>
+  <h1>Welcome to the Cars Auction!</h1>
+  <h2>Subaru BRZ 2025</h2>
+  <p>The 2025 Subaru BRZ is a high-performance sports coupe featuring a 2.4-liter BOXER engine, rear-wheel drive, and a range of exciting design and technology enhancements.</p>
+  <p>Starting Price: $150K</p>
+  <img src =  "https://www.autosnuff.com/wp-content/uploads/2023/07/2025-Subaru-BRZ-Exterior-1024x607.png", alt = "Subaru BRZ 2025">
+
+  <h2>Toyota GR86 2025</h2>
+  <p>The 2025 Toyota GR86 is a sporty coupe that combines performance, style, and advanced technology, making it a standout choice for driving enthusiasts.</p>
+  <p>Starting Price: $150K</p>
+  <img src = "https://tse3.mm.bing.net/th/id/OIP.Bt3rUHTDy0lgygHgx69DygHaFe?rs=1&pid=ImgDetMain&o=7&rm=3", alt = "Toyota GR86 2025">
+
+  <h2>Dodge Challenger</h2>
+  <p>The Dodge Challenger is a legendary American muscle car celebrated for its powerful engines, retro-inspired design, and performance-oriented variants, though it was discontinued at the end of 2023.</p>
+  <p>Starting Price: $150K</p>
+  <img src = "https://tse4.mm.bing.net/th/id/OIP._CyMjkJCW6xd0aLpeH2a6gHaEz?rs=1&pid=ImgDetMain&o=7&rm=3", alt = "Dodge Challenger">
+
+  <h2>Toyota Supra</h2>
+  <p>The Toyota Supra is a legendary sports car known for its performance, handling, and iconic status, with the fifth-generation GR Supra offering up to 382 horsepower, rear-wheel drive, and advanced performance features.</p>
+  <p>Starting Price: $150K</p>
+  <img src = "https://wallpapers.com/images/hd/4k-laptop-car-toyota-supra-3vpo6s8g2wq8xitp.jpg", alt = "Toyota Supra">
+
+</body>
+</html>
