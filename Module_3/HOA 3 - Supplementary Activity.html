@@ -1,345 +1,496 @@
+<!-- HTML setup with english language and character encoding, including its meta description and title for the webpage -->
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- I applied internal CSS styling for body, header, headings, paragraphs, and other parts! -->
+
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Interactive Movie Dashboard showcasing trailers, cast info, reviews, and media for film enthusiasts.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Movie Dashboard</title>
-<style>
-    /* Global Styling */
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #0d0d0d;
-        color: #f0f0f0;
-    }
-    a {
-        text-decoration: none;
-        color: #00ffff;
-        transition: color 0.3s;
-    }
-    a:hover {
-        color: #ff6347;
-    }
 
-    /* Header */
-    header {
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
-        padding: 30px 20px;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-    }
-    header h1 {
-        font-size: 3em;
-        margin: 0;
-        color: #fff;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    }
-    header p {
-        font-size: 1.2em;
-        margin-top: 10px;
-        color: #e0e0e0;
-    }
+    <meta charset="UTF-8">
+    <meta name="description" content="HTML Essentials Movie Showcase Project demonstrating semantic HTML5, media, tables, forms, and structured content.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Essentials | Movie Showcase</title>
 
-    /* Navigation */
-    nav {
-        display: flex;
-        justify-content: center;
-        background-color: #111;
-        padding: 15px 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-    nav a {
-        margin: 0 20px;
-        font-weight: bold;
-        font-size: 1.1em;
-    }
-
-    /* Sections */
-    section {
-        padding: 40px 20px;
-        border-bottom: 1px solid #222;
-    }
-    section h2 {
-        font-size: 2em;
-        color: #ff416c;
-        margin-bottom: 20px;
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-    }
-    section h3 {
-        color: #ffb347;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    /* Movie Cards */
-    .movie-card {
-        background: #1a1a1a;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 6px 15px rgba(255,100,100,0.3);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .movie-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(255,100,100,0.5);
-    }
-
-    /* Flex layout for media */
-    .media-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-    }
-    .media-section .media-card {
-        flex: 1 1 45%;
-        background: #111;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 5px 15px rgba(255,255,255,0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .media-section .media-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(255,100,100,0.5);
-    }
-    video, audio, img {
-        border-radius: 10px;
-        max-width: 100%;
-        display: block;
-        margin: 10px 0;
-    }
-
-    /* Tables */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-        background: #1a1a1a;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-    }
-    th, td {
-        padding: 12px 15px;
-        text-align: left;
-    }
-    th {
-        background-color: #222;
-        color: #ffb347;
-    }
-    tr:nth-child(even) {
-        background-color: #111;
-    }
-
-    /* Progress Bars */
-    progress {
-        width: 100%;
-        height: 25px;
-        appearance: none;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 15px;
-    }
-    progress::-webkit-progress-bar {
-        background-color: #333;
-    }
-    progress::-webkit-progress-value {
-        background: linear-gradient(90deg, #ff416c, #ff4b2b);
-    }
-
-    /* Forms */
-    form input, form textarea, form select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        background-color: #222;
-        color: #f0f0f0;
-        border: 1px solid #555;
-        border-radius: 5px;
-        font-size: 1em;
-    }
-    form input[type="submit"] {
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background 0.3s;
-    }
-    form input[type="submit"]:hover {
-        background: linear-gradient(135deg, #ff6347, #ff8c42);
-    }
-
-    /* Footer */
-    footer {
-        background-color: #111;
-        text-align: center;
-        padding: 25px 20px;
-        font-size: 0.9em;
-        color: #ccc;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
-    }
-    footer a {
-        color: #00ffff;
-        margin: 0 10px;
-    }
-    footer a:hover {
-        color: #ff416c;
-    }
-
-    /* Responsive */
-    @media screen and (max-width: 900px) {
-        .media-section {
-            flex-direction: column;
+    <style>
+        /*I added some style for the whole body, containing, the color, color when hovered, font, design, orientation, and space*/
+        body {
+            margin: 0;
+            font-family: 'Verdana', Geneva, sans-serif;
+            background-color: #F5F0E6; 
+            color: #3B2F2F; 
+            line-height: 1.6;
         }
-    }
-</style>
+
+        h1, h2, h3 {
+            color: #957361;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        a {
+            color: #A67B5B; 
+            text-decoration: none;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        a:hover {
+            color: #D2B48C; 
+        }
+
+        article img {
+            width: 300px;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /*For Header and Navigation designs*/
+        header {
+            background: linear-gradient(135deg, #5C4033, #3B2F2F); 
+            padding: 30px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            color: #F5F0E6; 
+        }
+
+        nav {
+            background-color: #3B2F2F; 
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            color: #F5F0E6; 
+        }
+
+        nav a:hover {
+            color: #A67B5B; 
+        }
+
+        /*For the main design*/
+        main {
+            padding: 40px 20px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        section {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+            section h2 {
+                font-size: 2.5em;
+            }
+
+            section h3 {
+                font-size: 2em; 
+            }
+
+        article {
+            background-color: #D2B48C;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(92, 64, 51, 0.3); 
+            font-family: 'Verdana', sans-serif;
+            color: #3B2F2F; 
+        }
+        
+        article h3 {
+            text-align: center;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        /*Design for the table*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #A67B5B; 
+            text-align: left;
+        }
+
+        th {
+            background-color: #5C4033; 
+            color: #F5F0E6; 
+        }
+
+        .trailer-link {
+            text-decoration: underline;
+            color: #A67B5B; 
+        }
+
+        .trailer-link:hover {
+            color: #000000; 
+        }
+
+        /*Design for the forms*/
+        form {
+            background-color: #D2B48C; 
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Verdana', sans-serif;
+            color: #3B2F2F; 
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #F5E6D2; 
+            border: 1px solid #A67B5B;
+            color: #3B2F2F; 
+            border-radius: 5px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color: #5C4033;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #F5F0E6;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #A67B5B; 
+        }
+
+        /* I added a new design, a rating bar and its design*/
+        .rating-bar {
+            width: 100%;
+            height: 15px;
+            background-color: #F5E6D2; 
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .rating-fill {
+            height: 100%;
+            background-color: #5C4033;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .rating-number {
+            font-weight: bold;
+            color: #3B2F2F; 
+            font-family: 'Verdana', sans-serif;
+        }
+
+        footer {
+            background-color: #3B2F2F;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #F5F0E6;
+            font-family: 'Georgia', serif;
+        }
+    </style>
+
+
+    </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Interactive Movie Dashboard</h1>
-    <p>Discover trailers, cast info, reviews, and multimedia for your favorite movies</p>
-</header>
+    <header>
+        <h1>🎬 Cinematic Spotlight</h1>
+    <p>Explore top films, watch trailers, and discover ratings — your ultimate movie dashboard experience.</p>
+    </header>
 
-<nav>
-    <a href="#movies">Movies</a>
-    <a href="#trailers">Trailers</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <nav>
+        <a href="#movies">Movies</a>
+        <a href="#feedback">Feedback</a>
+    </nav>
 
-<!-- Movies Section -->
-<section id="movies">
-    <h2>Featured Movies</h2>
+    <main>
+        <section id="movies">
+            <h2>Featured Movies</h2>
 
-    <div class="movie-card">
-        <h3>The Galactic Odyssey</h3>
-        <p><strong>Genre:</strong> Sci-Fi | <strong>Director:</strong> Jane Stellar</p>
-        <img src="https://edube.org/uploads/media/default/0001/04/band-photo.jpg" alt="The Galactic Odyssey Poster">
-        <table>
-            <tr><th>Cast</th><th>Release</th></tr>
-            <tr><td>Leo Sky, Mira Nova</td><td>2026</td></tr>
-        </table>
-        <p>Fan Rating:</p>
-        <progress value="85" max="100"></progress>
-    </div>
+            <!-- MOVIE 1 -->
+            <article>
+                <h3>500 Days of Summer (2009)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Five_hundred_days_of_summer.jpg" alt="500 Days of Summer movie poster">
+                <p><strong>Genre:</strong> Romantic Comedy-Drama</p>
+                <p><strong>Director:</strong> Marc Webb</p>
+                
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
 
-    <div class="movie-card">
-        <h3>Mystery of the Forgotten Realm</h3>
-        <p><strong>Genre:</strong> Fantasy | <strong>Director:</strong> David Noir</p>
-        <img src="https://edube.org/uploads/media/default/0001/04/member1-amy.jpg" alt="Mystery of the Forgotten Realm Poster">
-        <table>
-            <tr><th>Cast</th><th>Release</th></tr>
-            <tr><td>Lana Shade, Arik Storm</td><td>2025</td></tr>
-        </table>
-        <p>Fan Rating:</p>
-        <progress value="90" max="100"></progress>
-    </div>
+                <table>
+                    <tr><th>Main Cast</th><th>Notable Awards</th></tr>
+                    <tr><td>Joseph Gordon-Levitt, Zooey Deschanel</td><td>Golden Globe Nominee</td></tr>
+                </table>
 
-    <div class="movie-card">
-        <h3>Chronicles of the Lost Kingdom</h3>
-        <p><strong>Genre:</strong> Adventure | <strong>Director:</strong> Ella Dawn</p>
-        <img src="https://edube.org/uploads/media/default/0001/04/member2-john.jpg" alt="Chronicles of the Lost Kingdom Poster">
-        <table>
-            <tr><th>Cast</th><th>Release</th></tr>
-            <tr><td>Ryo Ken, Sara Vale</td><td>2027</td></tr>
-        </table>
-        <p>Fan Rating:</p>
-        <progress value="75" max="100"></progress>
-    </div>
-</section>
+                <p>
+                    A nonlinear love story that explores expectations versus reality in modern relationships.
+                    The film stands out for breaking traditional romantic movie structures.
+                </p>
 
-<!-- Trailers Section -->
-<section id="trailers">
-    <h2>Movie Trailers & Clips</h2>
-    <div class="media-section">
-        <div class="media-card">
-            <h3>The Galactic Odyssey</h3>
-            <video controls>
-                <source src="https://edube.org/uploads/media/default/0001/04/performance1.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-            <audio controls>
-                <source src="https://edube.org/uploads/media/default/0001/04/track1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-        <div class="media-card">
-            <h3>Mystery of the Forgotten Realm</h3>
-            <video controls>
-                <source src="https://edube.org/uploads/media/default/0001/04/performance1.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-            <audio controls>
-                <source src="https://edube.org/uploads/media/default/0001/04/track1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-    </div>
-</section>
+                <p><strong>Cultural Significance:</strong> It redefined the romantic comedy by showing love without fantasy.</p>
 
-<!-- Reviews Section -->
-<section id="reviews">
-    <h2>User Reviews</h2>
-    <p>Submit your thoughts and rate your favorite movies below.</p>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+                <p><a href="https://www.youtube.com/watch?v=PsD0NpFSADM" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+            <!-- MOVIE 2 -->
+            <article>
+                <h3>The Usual Suspects (1995)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9c/Usual_suspects_ver1.jpg" alt="The Usual Suspects movie poster">
+                <p><strong>Genre:</strong> Crime, Mystery</p>
+                <p><strong>Director:</strong> Bryan Singer</p>
 
-        <label for="movie">Select Movie:</label>
-        <select id="movie" name="movie">
-            <option value="galactic">The Galactic Odyssey</option>
-            <option value="forgotten">Mystery of the Forgotten Realm</option>
-            <option value="chronicles">Chronicles of the Lost Kingdom</option>
-        </select>
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
 
-        <label for="rating">Rating (0–100):</label>
-        <input type="range" id="rating" name="rating" min="0" max="100">
+                <table>
+                    <tr><th>Main Cast</th><th>Awards</th></tr>
+                    <tr><td>Kevin Spacey, Gabriel Byrne</td><td>2 Academy Awards</td></tr>
+                </table>
 
-        <label for="message">Review:</label>
-        <textarea id="message" name="message" rows="5" placeholder="Share your thoughts..."></textarea>
+                <p>
+                    A complex crime narrative famous for its unreliable narrator and legendary plot twist.
+                </p>
 
-        <input type="submit" value="Submit Review">
-    </form>
-</section>
+                <p><strong>Cultural Significance:</strong> Set the gold standard for psychological crime thrillers.</p>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact the Dashboard Team</h2>
-    <p>For inquiries or suggestions, reach out to us.</p>
-    <form>
-        <label for="contact-name">Name:</label>
-        <input type="text" id="contact-name" name="contact-name">
+                <p><a href="https://www.youtube.com/watch?v=oiXdPolca5w" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
 
-        <label for="contact-email">Email:</label>
-        <input type="email" id="contact-email" name="contact-email">
+            <!-- MOVIE 3 -->
+            <article>
+                <h3>La La Land (2016)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png" alt="La La Land movie poster">
+                <p><strong>Genre:</strong> Musical, Romance</p>
+                <p><strong>Director:</strong> Damien Chazelle</p>
 
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject">
+                <p><strong>Rating:</strong></p>
+                <div class="rating-bar">
+                    <div class="rating-fill" style="width: 88%;"></div>
+                </div>
 
-        <label for="message-contact">Message:</label>
-        <textarea id="message-contact" name="message-contact" rows="5"></textarea>
+                <table>
+                    <tr><th>Main Cast</th><th>Awards</th></tr>
+                    <tr><td>Ryan Gosling, Emma Stone</td><td>6 Academy Awards</td></tr>
+                </table>
 
-        <input type="submit" value="Send Message">
-    </form>
-</section>
+                <p>
+                    A visually stunning musical about dreams, love, and sacrifice in modern Los Angeles.
+                </p>
 
-<footer>
-    <p>Follow us on <a href="https://www.example.com/faceblock" target="_blank">Faceblock</a>, 
-    <a href="https://www.example.com/instagrump" target="_blank">Instagrump</a>, 
-    <a href="https://www.example.com/twotter" target="_blank">Twotter</a></p>
-    <p>&copy; 2026 Interactive Movie Dashboard</p>
-</footer>
+                <p><strong>Cultural Significance:</strong> Revived the modern movie musical for a new generation.</p>
+
+                <p><a href="https://www.youtube.com/watch?v=0pdqf4P9MB8" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
+
+            <!-- MOVIE 4 -->
+            <article>
+                <h3>Howl’s Moving Castle (2004)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg" alt="Howl's Moving Castle poster">
+                <p><strong>Genre:</strong> Fantasy, Animation</p>
+                <p><strong>Director:</strong> Hayao Miyazaki</p>
+
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
+
+                <table>
+                    <tr><th>Main Cast</th><th>Awards</th></tr>
+                    <tr><td>Chieko Baisho, Takuya Kimura</td><td>Academy Award Nominee</td></tr>
+                </table>
+
+                <p>
+                    A magical tale blending fantasy, romance, and anti-war themes.
+                </p>
+
+                <p><strong>Cultural Significance:</strong> A landmark of Studio Ghibli’s storytelling philosophy.</p>
+
+                <p><a href="https://www.youtube.com/watch?v=iwROgK94zcM" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
+
+            <!-- MOVIE 5 -->
+            <article>
+                <h3>Jujutsu Kaisen 0 (2021)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/77/Gekij%C5%8D-ban_Jujutsu_Kaisen_0.png" alt="Jujutsu Kaisen 0 poster">
+                <p><strong>Genre:</strong> Anime, Action, Fantasy</p>
+                <p><strong>Director:</strong> Sunghoo Park</p>
+
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
+
+                <table>
+                    <tr><th>Main Cast</th><th>Achievements</th></tr>
+                    <tr><td>Megumi Ogata, Kana Hanazawa</td><td>Global Box Office Success</td></tr>
+                </table>
+
+                <p>
+                    A prequel exploring curses, grief, and power in the Jujutsu universe.
+                </p>
+
+                <p><strong>Cultural Significance:</strong> Elevated anime films into mainstream cinema.</p>
+
+                <p><a href="https://www.youtube.com/watch?v=UPRqnFnnrr8" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
+
+            <!-- MOVIE 6 -->
+            <article>
+                <h3>Forrest Gump (1994)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg" alt="Forrest Gump poster">
+                <p><strong>Genre:</strong> Drama</p>
+                <p><strong>Director:</strong> Robert Zemeckis</p>
+
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
+
+                <table>
+                    <tr><th>Main Cast</th><th>Awards</th></tr>
+                    <tr><td>Tom Hanks, Robin Wright</td><td>6 Academy Awards</td></tr>
+                </table>
+
+                <p>
+                    A heartfelt story of innocence navigating historic American moments.
+                </p>
+
+                <p><strong>Cultural Significance:</strong> A timeless symbol of perseverance and kindness.</p>
+
+                <p><a href="https://www.youtube.com/watch?v=bLvqoHBptjg" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
+
+            <!-- MOVIE 7 -->
+            <article>
+                <h3>Pulp Fiction (1994)</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-4vNPSJxr8UAWAI0TNgbMl2g97q9GMT92Q0-yTU7S0yk5Mev5Z4lr4_MXPFI9eQPg-2y&s=10" alt="Pulp Fiction poster">
+                <p><strong>Genre:</strong> Crime, Drama</p>
+                <p><strong>Director:</strong> Quentin Tarantino</p>
+
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
+
+                <table>
+                    <tr><th>Main Cast</th><th>Awards</th></tr>
+                    <tr><td>John Travolta, Samuel L. Jackson</td><td>Palme d’Or</td></tr>
+                </table>
+
+                <p>
+                    Interwoven crime stories with sharp dialogue and nonlinear storytelling.
+                </p>
+
+                <p><strong>Cultural Significance:</strong> Revolutionized independent cinema.</p>
+
+                <p><a href="https://www.youtube.com/watch?v=s7EdQ4FqbhY" target="_blank"class="trailer-link"> Watch Official Trailer</a></p>
+            </article>
+
+            <!-- MOVIE 8 -->
+            <article>
+                <h3>The Truman Show (1998)</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqy_nkTMekIPuzOcdX04osQqRPR-f8qjYWmg&s" alt="The Truman Show poster">
+                <p><strong>Genre:</strong> Drama, Sci-Fi</p>
+                <p><strong>Director:</strong> Peter Weir</p>
+
+                <div class="rating-container">
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 85%;"></div>
+                    </div>
+                    <span class="rating-number">85%</span>
+                </div>
+
+                <table>
+                    <tr><th>Main Cast</th><th>Awards</th></tr>
+                    <tr><td>Jim Carrey, Laura Linney</td><td>BAFTA Awards</td></tr>
+                </table>
+
+                <p>
+                    A man slowly realizes his entire life is a television show.
+                </p>
+
+                <p><strong>Cultural Significance:</strong> Predicted reality TV culture and surveillance society.</p>
+
+                <p><a href="https://www.youtube.com/watch?v=dlnmQbPGuls" target="_blank" class="trailer-link">Watch Official Trailer</a></p>
+            </article>
+        </section>
+
+        <!-- A feedback form to tell us which movie you liked the most! -->
+        <section id="feedback">
+            <h2>Viewer Feedback</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+
+                <label for="movie">Favorite Movie:</label>
+                <select id="movie">
+                    <option>500 Days of Summer</option>
+                    <option>The Usual Suspects</option>
+                    <option>La La Land</option>
+                    <option>Howl’s Moving Castle</option>
+                    <option>Jujutsu Kaisen 0</option>
+                    <option>Forrest Gump</option>
+                    <option>Pulp Fiction</option>
+                    <option>The Truman Show</option>
+                </select>
+
+                <label for="message">Comments:</label>
+                <textarea id="message" rows="5"></textarea>
+
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Explore more projects on my <a href="https://github.com/dreiiuu" target="_blank" class="trailer-link">GitHub account</a>.</p>
+    </footer>
 
 </body>
 </html>
