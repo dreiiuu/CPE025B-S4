@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      
+    p {
+        font-family: monospace;
+        font-size: 20px;
+        font-weight: 900;
+        font-style: normal;
+        color: rgb(17, 26, 17);
+        text-align: justify;
+
+      }
+
+    #greeting {
+        font-size: 24px;
+        color: rgb(194, 53, 9);
+      }
+
+    .highlight {
+        background-color: rgb(64, 133, 7);
+        color: white;
+        font-weight: bold;
+      }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+        color: #222;
+    }
+
+    h1, h2 {
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        transition: transform 0.3s ease;
+    }
+
+    div {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        background: white;
+        border-radius: 8px;
+    }
+
+    button {
+        padding: 10px 18px;
+        margin: 8px;
+        border: none;
+        border-radius: 6px;
+        background: #ff6040;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: #d94a2f;
+        transform: translateY(-2px);
+    }
+
+    header {
+        background: #111;
+        color: white;
+        padding: 20px 0;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ff6040;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    footer a {
+        color: #ff6040;
+        text-decoration: none;
+    }
+    </style>
+
+
+  </head>
+  <body>
+    <h1>This is Heading 1</h1>
+    
+    <p>This is an example of using an internal stylesheet with the style element. By defining CSS rules in the style element, we can apply consistent styling across the entire page without repeating the code for each element.</p>
+    <p>This is a <span style="color: rgb(64, 224, 0);">sample text</span> with some inline styling.</p>
+
+    <div style="border: 1px solid black; padding: 10px;">
+        <img src="/uploads/media/default/0001/04/rect1.png" alt="Image 1">
+        <img src="/uploads/media/default/0001/04/rect2.png" alt="Image 2">
+        <img src="/uploads/media/default/0001/04/rect3.png" alt="Image 3">
+    </div>
+
+    <p>This is a <span style="color: rgb(47, 139, 155);">blue</span> text.</p>
+
+    <div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+
+    <p>Here is a normal paragraph.</p>
+    <p class="highlight">This paragraph has the 'highlight' class applied to it.</p>
+    <p>Another normal paragraph.</p>
+    <p class="highlight">Another paragraph with the 'highlight' class.</p>
+    </div>
+
+    <button type="button" title="Click me for more information!!!">
+    Learn More</button>
+
+    <button onclick="alert('Hello, World! Wassup!!!')">Click Me</button>
+
+    <ul>
+    <li data-recipe-id="001">
+        <h2>Spaghetti with Meatballs</h2>
+        <p>A classic Italian dish that's perfect for a cozy night in.</p>
+        <button class="save-recipe">Save Recipe</button>
+    </li>
+    <li data-recipe-id="002">
+        <h2>Chicken Tikka Masala</h2>
+        <p>A flavorful Indian curry that's sure to please.</p>
+        <button class="save-recipe">Save Recipe</button>
+    </li>
+    <li data-recipe-id="003">
+        <h2>Beef and Broccoli Stir Fry</h2>
+        <p>A quick and easy weeknight dinner that's packed with flavor.</p>
+        <button class="save-recipe">Save Recipe</button>
+    </li>
+</ul>
+
+
+
+    <header>
+      <h1>Welcome to WebDev Solutions</h1>
+         <nav>
+            <ul>
+               <li><a href="\home">Home</a></li>
+               <li><a href="\about">About</a></li>
+               <li><a href="\services">Services</a></li>
+               <li><a href="\contact">Contact</a></li>
+            </ul>
+         </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Our Services</h2>
+        <p>We offer a variety of services including web design, development, and digital marketing. Contact us to learn more!</p>
+      </article>
+      <article>
+        <h2>Our Customers</h2>
+        <p>Our customers are at the heart of everything we do. We pride ourselves on delivering exceptional service and building strong relationships with each and every one of our clients.</p>
+      </article>
+    </main>
+
+    <div class="vcard">
+    <p class="fn">John Doep>
+    <p class="title">Web and Back-End Developer</p>
+    <p class="org">Smith Web Solutions</p>
+    <p class="tel">555-555-5555</p>
+    <a class="email" href="mailto:john@smithwebsolutions.com">john@smithwebsolutions.com</a>
+    <p class="adr">
+        <span class="street-address">123 Main St.</span><br>
+        <span class="locality">Anytown</span>, <span class="region">CA</span> <span class="postal-code">12345</span>
+    </p>
+    </div>
+
+    <div itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">John Smith</h2>
+        <p itemprop="jobTitle">Web Developer</p>
+        <p>
+        Contact me at:
+        <a href="mailto:john@smithwebsolutions.com"
+        itemprop="email">john@smithwebsolutions.com
+        </a>
+        </p>
+    </div>
+
+    <button role="button">Click me</button>
+    <a href="#" role="link">Read more</a>
+    <h2 role="heading">Important Information</h2>
+
+    <button aria-expanded="true">Toggle menu</button>
+    <input type="checkbox" aria-checked="false">
+    <div aria-hidden="true">This content is hidden from screen readers.</div>
+
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    
+    <h2>Choose the door game</h2>
+    <p>Open the door to see what's waiting for you behind it.</p>
+    <img src="https://edube.org/uploads/media/default/0001/03/choose-the-door.jpg" 
+    alt="A picture with two doors" usemap="#two-doors">
+    <map name="two-doors">
+    <area shape="rect" title="A door with a white knob" coords="80,80,275,450" href="https://example.com/option1" alt="Open the door to Option 1">
+    <area shape="rect" title="A door with a black knob" coords="540,75,745,460" href="https://example.com/option2" alt="Open the door to Option 2">
+    </map>
+   
+
+     <h1>Your Location</h1>
+  <p>Click me to get hack hahahaha! hackirman (Educational Purpose Only.)</p>
+  
+  <button id="getLocation">Get Location</button>
+  
+  <p id="result"></p>
+  
+    <script>
+        const getLocationButton = document.getElementById('getLocation');
+        const resultElement = document.getElementById('result');
+        
+        getLocationButton.addEventListener('click', () => {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            resultElement.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+            });
+        } else {
+            resultElement.textContent = "Geolocation is not supported by your browser.";
+        }
+        });
+    </script>
+    
+    <audio controls>
+    <source src="/uploads/media/default/0001/04/your-audio-file.mp3" type="audio/mp3">
+    </audio>
+
+    <footer>
+        <p>Explore more projects on my <a href="https://github.com/dreiiuu" target="_blank" class="trailer-link">GitHub account</a>.</p>
+    </footer>
+
+
+</body>
+</html>
