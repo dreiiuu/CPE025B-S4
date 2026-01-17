@@ -1,210 +1,290 @@
+<!-- HTML setup with english language and character encoding, including its meta description and title for the webpage -->
+
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- starting from the head part of the code -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Buddy Dashboard | Drey University</title>
+    
+    <!-- Now, this is our CSS styling -->   
+     <!-- I applied internal CSS styling for body, header, headings, paragraphs, and other parts! --> 
     <style>
-        body {
-            margin: 0;
-            font-family: 'Verdana', sans-serif;
-            background-color: #F4F7F8;
-            color: #333;
-            line-height: 1.6;
-        }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #6C63FF, #3F3D56);
-            color: #FFF;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        header h1 { 
-            font-family: 'Trebuchet MS', sans-serif; 
-            font-size: 2.5em; }
+    /*As we can see here, I imported fonts from the Google Family fonts so we can access and use it in our website*/
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-        
-        #profile {
-            width: 120px; 
-            height: 120px; 
-            border-radius: 50%; 
-            border: 3px solid #FFF;
-            margin: 20px auto 10px;
-             object-fit: cover;
-              display: block;
-        }
-        .vision-mission {
-            max-width: 900px; 
-            margin: 20px auto; 
-            text-align: left; 
-            background: rgba(255,255,255,0.15);
-            padding: 15px; 
-            border-radius: 10px; 
-            line-height: 1.4;
-        }
+    /*Still, I applied the learnings that I got from the previous HOAs so it is a progressive approach when it comes to design*/
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #F6F8FB;
+        color: #1F2937;
+        line-height: 1.65;
+    }
 
-        .vision-mission h3 { color: #FFF; margin-bottom: 5px; }
-        .vision-mission p { color: #EEE; font-size: 0.95em; }
+    p {
+        text-align: justify;
+    }
 
-        /* Navigation */
-        nav {
-            background-color: #3F3D56;
-            padding: 12px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
-        nav a {
-            color: #FFF; 
-            font-weight: bold; 
-            margin: 0 15px; 
-            text-decoration: none;
-        }
-        nav a:hover { color: #6C63FF; }
+    header {
+        background: linear-gradient(135deg, #1E1B4B, #4338CA);
+        color: #FFFFFF;
+        text-align: center;
+        padding: 55px 20px;
+    }
 
-        main { padding: 30px 20px; 
-            max-width: 1100px; 
-            margin: 0 auto; }
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.7em;
+        letter-spacing: 0.6px;
+        margin-bottom: 10px;
+    }
 
-        /* Subject Cards */
-        .subject-card {
-            background-color: #FFF; 
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 25px; 
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    #profile {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid rgba(255,255,255,0.9);
+        margin: 20px auto 12px;
+        object-fit: cover;
+        display: block;
+    }
 
-        .subject-card:hover { transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    .vision-mission {
+        max-width: 900px;
+        margin: 25px auto;
+        background: rgba(255,255,255,0.14);
+        padding: 22px;
+        border-radius: 14px;
+    }
 
-        .subject-card h2 { 
-            margin-top: 0; color: #6C63FF; }
+    .vision-mission h3 {
+        color: #E0E7FF;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
 
-        .subject-card p { 
-            font-size: 0.95em; }
+    .vision-mission p {
+        color: #F1F5F9;
+        font-size: 0.95em;
+    }
 
-        /* Resources */
-        .resources a {
-            display: inline-block; 
-            margin-right: 10px; 
-            margin-bottom: 5px;
-            padding: 5px 10px; 
-            background-color: #6C63FF; 
-            color: #FFF;
-            border-radius: 5px; 
-            text-decoration: none; 
-            font-size: 0.9em;
-        }
-        .resources a:hover { 
-            background-color: #3F3D56; }
+    nav {
+        background-color: #1E1B4B;
+        padding: 14px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
 
-        /* Trivia / Tips */
-        .trivia { margin-top: 10px; 
-            padding: 10px; 
-            background-color: #E9E8FF;
-            border-left: 4px solid #6C63FF; 
-            border-radius: 5px; 
-            font-size: 0.9em; }
+    nav a {
+        color: #E0E7FF;
+        font-weight: 600;
+        margin: 0 18px;
+        text-decoration: none;
+        font-size: 0.95em;
+    }
 
-        /* Calendar */
-        .calendar { margin: 30px auto; 
-            max-width: 900px; 
-            text-align: center; }
+    nav a:hover {
+        color: #A5B4FC;
+    }
 
-        .calendar h3 { color: #6C63FF; 
-            margin-bottom: 15px; }
+    main {
+        padding: 35px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
 
-        .calendar-table { width: 100%; border-collapse: collapse; }
+    .subject-card {
+        background-color: #FFFFFF;
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        margin-bottom: 32px;
+        padding: 28px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-        .calendar-table th, .calendar-table td { 
-            border: 1px solid #CCC; 
-            padding: 10px; }
+    .subject-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
 
-        .calendar-table th { 
-            background-color: #6C63FF; color: #FFF; }
+    .subject-card h2 {
+        margin-top: 0;
+        color: #4338CA;
+        font-weight: 700;
+    }
 
-        .calendar-table td { 
-            background-color: #FFF; }
+    .subject-card p {
+        font-size: 0.95em;
+        color: #374151;
+    }
 
-        /* Feedback Form */
-        #feedback { 
-            margin-top: 40px; }
+    /* Resources */
+    .resources a {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 8px;
+        padding: 7px 16px;
+        background-color: #EEF2FF;
+        color: #4338CA;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.85em;
+        font-weight: 600;
+    }
 
-        form {
-            background-color: #FFF; 
-            padding: 25px; border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            max-width: 600px; margin: 0 auto;
-        }
+    .resources a:hover {
+        background-color: #4338CA;
+        color: #FFFFFF;
+    }
 
-        form label { display: block; margin-top: 15px; }
+    .trivia {
+        margin-top: 14px;
+        padding: 14px;
+        background-color: #EEF2FF;
+        border-left: 4px solid #4338CA;
+        border-radius: 8px;
+        font-size: 0.85em;
+        color: #1F2937;
+    }
 
-        form input, form textarea, form select {
-            width: 100%; padding: 10px; 
-            margin-top: 5px;
-            border-radius: 5px; 
-            border: 1px solid #CCC; 
-            font-family: 'Verdana', sans-serif;
-        }
-        form input[type="submit"] {
-            background-color: #6C63FF; 
-            color: #FFF; border: none;
-            cursor: pointer; 
-            margin-top: 20px; 
-            font-weight: bold;
-        }
-        form input[type="submit"]:hover { 
-            background-color: #3F3D56; }
+    .calendar {
+        margin: 40px auto;
+        max-width: 900px;
+        text-align: center;
+    }
 
-        /* Contact Us */
-        .contact { margin: 40px auto; 
-            max-width: 600px; 
-            background-color: #FFF;
-            padding: 25px; 
-            border-radius: 10px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .contact h3 { color: #6C63FF; 
-            margin-bottom: 10px; }
+    .calendar h3 {
+        color: #4338CA;
+        margin-bottom: 18px;
+        font-weight: 700;
+    }
 
-        .contact p { font-size: 0.95em; 
-            margin: 5px 0; }
-        
-            p {
-                text-align: justify;
-            }
+    .calendar-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        /* Footer */
-        footer { text-align: center; 
-            padding: 20px; 
-            background-color: #3F3D56; 
-            color: #FFF; 
-            margin-top: 40px; }
+    .calendar-table th,
+    .calendar-table td {
+        border: 1px solid #CBD5E1;
+        padding: 12px;
+    }
+
+    .calendar-table th {
+        background-color: #4338CA;
+        color: #FFFFFF;
+    }
+
+    .calendar-table td {
+        background-color: #FFFFFF;
+    }
+
+    #feedback {
+        margin-top: 50px;
+    }
+
+    form {
+        background-color: #FFFFFF;
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    form label {
+        display: block;
+        margin-top: 16px;
+        font-weight: 600;
+        color: #374151;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        border-radius: 8px;
+        border: 1px solid #CBD5E1;
+        font-family: 'Inter', sans-serif;
+    }
+
+    form input[type="submit"] {
+        background-color: #4338CA;
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        margin-top: 22px;
+        font-weight: 600;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #1E1B4B;
+    }
+
+    .contact {
+        margin: 45px auto;
+        max-width: 600px;
+        background-color: #FFFFFF;
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    .contact h3 {
+        color: #4338CA;
+        margin-bottom: 12px;
+    }
+
+    .contact p {
+        font-size: 0.95em;
+        margin: 6px 0;
+    }
+
+    .center-text {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+        padding: 26px;
+        background-color: #1E1B4B;
+        color: #E0E7FF;
+        margin-top: 60px;
+        font-size: 0.85em;
+    }
     </style>
+
 </head>
 <body>
 
-    <!-- Header / Hero -->
+    <!-- Header -->
     <header>
         <h1>📚 Study Buddy Dashboard</h1>
-        <img id="profile" src="https://github.com/yourusername/yourrepo/raw/main/profile.jpg" alt="Profile Image">
+        <img id="profile" src="https://raw.githubusercontent.com/dreiiuu/CPE025B-S4/main/Module_4/Drey-University-Logo.png" alt="Drey University Logo">
         <p style="text-align: center;">Organize, explore, and interact with your courses at Drey University!</p>
 
-        <!-- Vision / Mission -->
+        <!-- Mission / Vision -->
         <div class="vision-mission" style="text-align: justify;">
             <h3 style = "text-align: center;">🏛️ Drey University</h3>
-            <h3 style = "text-align: center;">Vision</h3>
-            <p>
-                Drey University envisions itself as a premier institution of higher learning that leads innovation in collaborative, technology-driven education. 
-                We aim to produce globally competitive, socially responsible, and compassionate professionals who can adapt to emerging trends and challenges in various fields of study.
-            </p>
 
             <h3 style = "text-align: center;">Mission</h3>
             <p>
                 Drey University commits to providing quality, accessible, and learner-centered education through a Study Buddy–based academic system. 
                 Our mission promotes collaboration, critical thinking, ethical practice, and lifelong learning across diverse disciplines, ensuring students are prepared to become effective problem solvers, innovative thinkers, and community-conscious professionals.
+            </p>
+
+            <h3 style = "text-align: center;">Vision</h3>
+            <p>
+                Drey University envisions itself as a premier institution of higher learning that leads innovation in collaborative, technology-driven education. 
+                We aim to produce globally competitive, socially responsible, and compassionate professionals who can adapt to emerging trends and challenges in various fields of study.
             </p>
         </div>
     </header>
@@ -228,7 +308,7 @@
                 <p>The Law program at Drey University introduces students to the foundations of legal systems, constitutional principles, and the role of law in maintaining order and justice in society. It emphasizes critical thinking, legal reasoning, and ethical responsibility while familiarizing students with basic rights, obligations, and judicial processes. Through this program, learners gain an early understanding of how laws are created, interpreted, and applied in real-world contexts.</p>
                 <div class="resources">
                     <a href="https://lawphil.net/executive/ao/ao2022/ao_2_2022.html" target="_blank">Notes</a>
-                    <a href="https://youtu.be/xaJuFbtuK7E?si=6xogURXxi87J3VSV target="_blank">Video</a>
+                    <a href="https://youtu.be/xaJuFbtuK7E?si=6xogURXxi87J3VSV" target="_blank">Video</a>
                     <a href="https://www.digest.ph/blog/how-to-study-law-effectively-proven-methods-for-success" target="_blank">Trivia</a>
                 </div>
                 <div class="trivia">Did you know? The Philippine legal system blends civil law and common law traditions.</div>
@@ -310,31 +390,32 @@
 
         <!-- Calendar -->
         <section id="calendar" class="calendar">
-            <h3>📅 University Enrollment & Advising Calendar</h3>
+        <h3>📅 Schedule of Upcoming University Events</h3>
             <table class="calendar-table">
                 <tr>
                     <th>Date</th>
                     <th>Program</th>
                     <th>Activity</th>
                 </tr>
-                <tr><td>May 30 – June 1</td><td>Law</td><td>Enrollment & Advising</td></tr>
-                <tr><td>June 2 – June 4</td><td>Psychology</td><td>Enrollment & Advising</td></tr>
-                <tr><td>June 5 – June 7</td><td>Medical</td><td>Enrollment & Advising</td></tr>
-                <tr><td>June 8 – June 10</td><td>Nursing</td><td>Enrollment & Advising</td></tr>
-                <tr><td>June 11 – June 13</td><td>Mass Communication</td><td>Enrollment & Advising</td></tr>
-                <tr><td>June 14 – June 16</td><td>Food Technology</td><td>Enrollment & Advising</td></tr>
-                <tr><td>June 17 – June 19</td><td>Culinary Arts</td><td>Enrollment & Advising</td></tr>
+                    <tr><td>May 30 – June 1</td><td>Law</td><td>Law Talks ⚖️💬</td></tr>
+                    <tr><td>June 2 – June 4</td><td>Psychology</td><td>Understanding the Mind Workshop 🧠💡</td></tr>
+                    <tr><td>June 5 – June 7</td><td>Medical</td><td>Medical Career Orientation 🩺➕</td></tr>
+                    <tr><td>June 8 – June 10</td><td>Nursing</td><td>Nursing Skills Workshop ❤️🩺</td></tr>
+                    <tr><td>June 11 – June 13</td><td>Mass Communication</td><td>Media and Broadcasting Forum 🎤📡</td></tr>
+                    <tr><td>June 14 – June 16</td><td>Food Technology</td><td>Food Innovation Showcase 🧪🍽️</td></tr>
+                    <tr><td>June 17 – June 19</td><td>Culinary Arts</td><td>Live Cooking Demonstration 👨‍🍳🍴</td></tr>
             </table>
         </section>
 
         <!-- Feedback -->
         <section id="feedback">
             <h2>Student Feedback</h2>
+            <p>We would love to know which program you think is the best and which one you plan to enroll in.</p>
             <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name">
 
-                <label for="program">Favorite Program:</label>
+                <label for="program">Program:</label>
                 <select id="program">
                     <option>Law</option>
                     <option>Psychology</option>
@@ -355,13 +436,14 @@
         <!-- Contact Us -->
         <section id="contact" class="contact">
             <h3>Contact Us</h3>
-            <p><strong>Owner:</strong> Drei [Your Last Name]</p>
-            <p><strong>Email:</strong> your.email@example.com</p>
-            <p><strong>Phone:</strong> +63 912 345 6789</p>
+            <p><strong>Owner:</strong> Drey University</p>
+            <p><strong>Email:</strong> Drey.University@du.edu.ph</p>
+            <p><strong>Phone:</strong> +63 991 656 1428</p>
         </section>
 
     </main>
 
+    <!-- Footer: I always put my GitHub repository below the footer for better visibility and quick access to my academic and non-academic projects -->
     <footer>
         <p style="text-align: center;">© 2026 Drey University | Study Buddy Dashboard</p>
         <p style="text-align: center;">Explore more projects on my <a href="https://github.com/dreiiuu" target="_blank" class="trailer-link">GitHub account</a>.</p>
