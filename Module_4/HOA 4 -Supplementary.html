@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy Dashboard | Drey University</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Verdana', sans-serif;
+            background-color: #F4F7F8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6C63FF, #3F3D56);
+            color: #FFF;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { 
+            font-family: 'Trebuchet MS', sans-serif; 
+            font-size: 2.5em; }
+
+        
+        #profile {
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            border: 3px solid #FFF;
+            margin: 20px auto 10px;
+             object-fit: cover;
+              display: block;
+        }
+        .vision-mission {
+            max-width: 900px; 
+            margin: 20px auto; 
+            text-align: left; 
+            background: rgba(255,255,255,0.15);
+            padding: 15px; 
+            border-radius: 10px; 
+            line-height: 1.4;
+        }
+
+        .vision-mission h3 { color: #FFF; margin-bottom: 5px; }
+        .vision-mission p { color: #EEE; font-size: 0.95em; }
+
+        /* Navigation */
+        nav {
+            background-color: #3F3D56;
+            padding: 12px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: #FFF; 
+            font-weight: bold; 
+            margin: 0 15px; 
+            text-decoration: none;
+        }
+        nav a:hover { color: #6C63FF; }
+
+        main { padding: 30px 20px; 
+            max-width: 1100px; 
+            margin: 0 auto; }
+
+        /* Subject Cards */
+        .subject-card {
+            background-color: #FFF; 
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px; 
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subject-card:hover { transform: translateY(-5px); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .subject-card h2 { 
+            margin-top: 0; color: #6C63FF; }
+
+        .subject-card p { 
+            font-size: 0.95em; }
+
+        /* Resources */
+        .resources a {
+            display: inline-block; 
+            margin-right: 10px; 
+            margin-bottom: 5px;
+            padding: 5px 10px; 
+            background-color: #6C63FF; 
+            color: #FFF;
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 0.9em;
+        }
+        .resources a:hover { 
+            background-color: #3F3D56; }
+
+        /* Trivia / Tips */
+        .trivia { margin-top: 10px; 
+            padding: 10px; 
+            background-color: #E9E8FF;
+            border-left: 4px solid #6C63FF; 
+            border-radius: 5px; 
+            font-size: 0.9em; }
+
+        /* Calendar */
+        .calendar { margin: 30px auto; 
+            max-width: 900px; 
+            text-align: center; }
+
+        .calendar h3 { color: #6C63FF; 
+            margin-bottom: 15px; }
+
+        .calendar-table { width: 100%; border-collapse: collapse; }
+
+        .calendar-table th, .calendar-table td { 
+            border: 1px solid #CCC; 
+            padding: 10px; }
+
+        .calendar-table th { 
+            background-color: #6C63FF; color: #FFF; }
+
+        .calendar-table td { 
+            background-color: #FFF; }
+
+        /* Feedback Form */
+        #feedback { 
+            margin-top: 40px; }
+
+        form {
+            background-color: #FFF; 
+            padding: 25px; border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            max-width: 600px; margin: 0 auto;
+        }
+
+        form label { display: block; margin-top: 15px; }
+
+        form input, form textarea, form select {
+            width: 100%; padding: 10px; 
+            margin-top: 5px;
+            border-radius: 5px; 
+            border: 1px solid #CCC; 
+            font-family: 'Verdana', sans-serif;
+        }
+        form input[type="submit"] {
+            background-color: #6C63FF; 
+            color: #FFF; border: none;
+            cursor: pointer; 
+            margin-top: 20px; 
+            font-weight: bold;
+        }
+        form input[type="submit"]:hover { 
+            background-color: #3F3D56; }
+
+        /* Contact Us */
+        .contact { margin: 40px auto; 
+            max-width: 600px; 
+            background-color: #FFF;
+            padding: 25px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .contact h3 { color: #6C63FF; 
+            margin-bottom: 10px; }
+
+        .contact p { font-size: 0.95em; 
+            margin: 5px 0; }
+        
+            p {
+                text-align: justify;
+            }
+
+        /* Footer */
+        footer { text-align: center; 
+            padding: 20px; 
+            background-color: #3F3D56; 
+            color: #FFF; 
+            margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Hero -->
+    <header>
+        <h1>📚 Study Buddy Dashboard</h1>
+        <img id="profile" src="https://github.com/yourusername/yourrepo/raw/main/profile.jpg" alt="Profile Image">
+        <p style="text-align: center;">Organize, explore, and interact with your courses at Drey University!</p>
+
+        <!-- Vision / Mission -->
+        <div class="vision-mission" style="text-align: justify;">
+            <h3 style = "text-align: center;">🏛️ Drey University</h3>
+            <h3 style = "text-align: center;">Vision</h3>
+            <p>
+                Drey University envisions itself as a premier institution of higher learning that leads innovation in collaborative, technology-driven education. 
+                We aim to produce globally competitive, socially responsible, and compassionate professionals who can adapt to emerging trends and challenges in various fields of study.
+            </p>
+
+            <h3 style = "text-align: center;">Mission</h3>
+            <p>
+                Drey University commits to providing quality, accessible, and learner-centered education through a Study Buddy–based academic system. 
+                Our mission promotes collaboration, critical thinking, ethical practice, and lifelong learning across diverse disciplines, ensuring students are prepared to become effective problem solvers, innovative thinkers, and community-conscious professionals.
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#subjects">Programs</a>
+        <a href="#calendar">Calendar</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <!-- University Programs -->
+        <section id="subjects">
+            <h2>University Programs</h2>
+
+            <!-- LAW -->
+            <div class="subject-card">
+                <h2>Law ⚖️</h2>
+                <p>The Law program at Drey University introduces students to the foundations of legal systems, constitutional principles, and the role of law in maintaining order and justice in society. It emphasizes critical thinking, legal reasoning, and ethical responsibility while familiarizing students with basic rights, obligations, and judicial processes. Through this program, learners gain an early understanding of how laws are created, interpreted, and applied in real-world contexts.</p>
+                <div class="resources">
+                    <a href="https://lawphil.net/executive/ao/ao2022/ao_2_2022.html" target="_blank">Notes</a>
+                    <a href="https://youtu.be/xaJuFbtuK7E?si=6xogURXxi87J3VSV target="_blank">Video</a>
+                    <a href="https://www.digest.ph/blog/how-to-study-law-effectively-proven-methods-for-success" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Did you know? The Philippine legal system blends civil law and common law traditions.</div>
+            </div>
+
+            <!-- PSYCHOLOGY -->
+            <div class="subject-card">
+                <h2>Psychology 🧠</h2>
+                <p>The Psychology program focuses on the scientific study of human behavior and mental processes, covering cognitive, emotional, and social aspects of individuals. Students are introduced to core psychological theories, research methods, and applications that explain how people think, feel, and act. This program builds a strong foundation for understanding human behavior in academic, clinical, and everyday environments.</p>
+                <div class="resources">
+                    <a href="https://www.simplypsychology.org/" target="_blank">Notes</a>
+                    <a href="https://www.youtube.com/watch?v=vo4pMVb0R6M" target="_blank">Video</a>
+                    <a href="https://www.psychologytoday.com/us/basics" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Tip: Cognitive biases affect everyday decision-making. Awareness improves your reasoning skills.</div>
+            </div>
+
+            <!-- MEDICAL -->
+            <div class="subject-card">
+                <h2>Medical 🩺</h2>
+                <p>The Medical program provides an introductory foundation in human anatomy, physiology, and basic medical concepts essential to healthcare education. It familiarizes students with medical terminology, body systems, and the principles of disease prevention and health maintenance. This program prepares learners for further medical studies by developing discipline, scientific understanding, and awareness of patient-centered care.</p>
+                <div class="resources">
+                    <a href="https://openstax.org/details/books/anatomy-and-physiology" target="_blank">Notes</a>
+                    <a href="https://youtu.be/4Rd9ZeAYZgc?si=erlq3msI3yNlE0YW" target="_blank">Video</a>
+                    <a href="https://www.medicalnewstoday.com/" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Fun fact: The adult human body has 206 bones and over 600 muscles.</div>
+            </div>
+
+            <!-- NURSING -->
+            <div class="subject-card">
+                <h2>Nursing 🧑‍⚕️</h2>
+                <p>The Nursing program emphasizes the fundamentals of patient care, health assessment, and ethical nursing practice. Students are introduced to essential nursing skills, healthcare protocols, and the importance of compassion and professionalism in clinical settings. This program builds the knowledge and values necessary for delivering safe, effective, and holistic care to individuals and communities.</p>
+                <div class="resources">
+                    <a href="https://nurseslabs.com/nursing-notes/" target="_blank">Notes</a>
+                    <a href="https://youtu.be/FXCFGwWYFWg?si=Yt0CoZXWu5aWT4uV" target="_blank">Video</a>
+                    <a href="https://www.ryptic.com/blog/medical-and-health-trivia-questions" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Tip: Proper hand hygiene prevents infections in clinical practice.</div>
+            </div>
+
+            <!-- MASS COMMUNICATION -->
+            <div class="subject-card">
+                <h2>Mass Communication 📡</h2>
+                <p>The Mass Communication program explores the principles of media, journalism, and effective information dissemination in modern society. It introduces students to communication theories, media ethics, and the role of mass media in shaping public opinion and culture. Through this program, learners develop critical thinking and communication skills essential for responsible and impactful media practice.</p>
+                <div class="resources">
+                    <a href="https://www.scribd.com/document/209109037/Introduction-to-Mass-Communication-Notes" target="_blank">Notes</a>
+                    <a href="https://youtu.be/Rd2FBtDtdug?si=ZHYQVEpxr5ecu0uz" target="_blank">Video</a>
+                    <a href="https://quizandsurveymaster.com/best-trivia-questions-and-answers/" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Did you know? The first newspaper appeared in Germany in 1605.</div>
+            </div>
+
+            <!-- FOOD TECHNOLOGY -->
+            <div class="subject-card">
+                <h2>Food Technology 🧪</h2>
+                <p>The Food Technology program focuses on the science behind food production, processing, preservation, and safety. Students gain an understanding of how technology and innovation improve food quality, shelf life, and nutritional value. This program highlights the importance of food safety standards and sustainable practices within the food industry.</p>
+                <div class="resources">
+                    <a href="https://www.foodkida.com/food-technology-notes" target="_blank">Notes</a>
+                    <a href="https://youtu.be/xLXOrXd5Bl4?si=OclrxgwM4QSPD18q" target="_blank">Video</a>
+                    <a href="https://www.proprofs.com/quiz-school/story.php?title=what-do-you-know-about-food-technology" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Fun fact: Pasteurization prevents bacterial contamination in food and beverages.</div>
+            </div>
+
+            <!-- CULINARY -->
+            <div class="subject-card">
+                <h2>Culinary Arts 🍳</h2>
+                <p>The Culinary Arts program introduces students to fundamental cooking techniques, food preparation, and kitchen management practices. It emphasizes creativity, precision, and discipline while developing an appreciation for food presentation and flavor balance. This program serves as a foundation for professional culinary practice and hospitality-related careers.</p>
+                <div class="resources">
+                    <a href="https://www.scribd.com/document/868422967/Culinary-school-notes" target="_blank">Notes</a>
+                    <a href="https://youtu.be/ojZIgseX7Xo?si=TiUayjSBzA9_Tbhw" target="_blank">Video</a>
+                    <a href="https://www.proprofs.com/quiz-school/story.php?title=culinary-test" target="_blank">Trivia</a>
+                </div>
+                <div class="trivia">Tip: Taste your dish before serving to perfect the seasoning.</div>
+            </div>
+
+        </section>
+
+        <!-- Calendar -->
+        <section id="calendar" class="calendar">
+            <h3>📅 University Enrollment & Advising Calendar</h3>
+            <table class="calendar-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Program</th>
+                    <th>Activity</th>
+                </tr>
+                <tr><td>May 30 – June 1</td><td>Law</td><td>Enrollment & Advising</td></tr>
+                <tr><td>June 2 – June 4</td><td>Psychology</td><td>Enrollment & Advising</td></tr>
+                <tr><td>June 5 – June 7</td><td>Medical</td><td>Enrollment & Advising</td></tr>
+                <tr><td>June 8 – June 10</td><td>Nursing</td><td>Enrollment & Advising</td></tr>
+                <tr><td>June 11 – June 13</td><td>Mass Communication</td><td>Enrollment & Advising</td></tr>
+                <tr><td>June 14 – June 16</td><td>Food Technology</td><td>Enrollment & Advising</td></tr>
+                <tr><td>June 17 – June 19</td><td>Culinary Arts</td><td>Enrollment & Advising</td></tr>
+            </table>
+        </section>
+
+        <!-- Feedback -->
+        <section id="feedback">
+            <h2>Student Feedback</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+
+                <label for="program">Favorite Program:</label>
+                <select id="program">
+                    <option>Law</option>
+                    <option>Psychology</option>
+                    <option>Medical</option>
+                    <option>Nursing</option>
+                    <option>Mass Communication</option>
+                    <option>Food Technology</option>
+                    <option>Culinary Arts</option>
+                </select>
+
+                <label for="message">Comments / Suggestions:</label>
+                <textarea id="message" rows="5"></textarea>
+
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </section>
+
+        <!-- Contact Us -->
+        <section id="contact" class="contact">
+            <h3>Contact Us</h3>
+            <p><strong>Owner:</strong> Drei [Your Last Name]</p>
+            <p><strong>Email:</strong> your.email@example.com</p>
+            <p><strong>Phone:</strong> +63 912 345 6789</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p style="text-align: center;">© 2026 Drey University | Study Buddy Dashboard</p>
+        <p style="text-align: center;">Explore more projects on my <a href="https://github.com/dreiiuu" target="_blank" class="trailer-link">GitHub account</a>.</p>
+    </footer>
+
+</body>
+</html>
+                    
