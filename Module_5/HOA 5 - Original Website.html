@@ -1,6 +1,6 @@
 <!-- “Non-Semantic Legacy HTML with Minimal Accessibility” -->
 
-<!-- Our supplementary activity is to compare the procedure code and the supplementary code -->
+<!-- Our supplementary activity is to compare the Original code and the Improved code -->
 <!-- I simply added this to view it visually in my materials and for comparison -->
  <!-- For my answer to the given question, feel free to check my HOA 2.2 document -->
 
@@ -8,26 +8,35 @@
 <html>
 <head>
     <title>Harbor Light Community Center</title>
+<!-- For the head section, it contains the page title but missing charset declaration and CSS styling -->
 </head>
 <body>
-    <font face="Arial, sans-serif">
+<!-- Fonts, tag sets, text style is deprecated in HTML5. We should apply CSS styling here -->
+    <font face="Arial, sans-serif"
+
     <div>
         <center><img src="https://edube.org/uploads/media/default/0001/04/logo.jpg" alt="Center Logo">
         Welcome to Harbor Light Community Center</center>
     </div>
+<!-- It uses <center> which is deprecated to align logo and welcome text -->
+
+<!-- The navigation here are just simple plain text links, not clickable, lacks the <nav> semantic element -->
     <div>
         Home | About | Services | Events | Contact
     </div>
     <div class="banner">
+<!-- The image is included but alt text is not marked for screen readers -->
         <img src="https://edube.org/uploads/media/default/0001/04/decorative-banner.jpg" alt="Decorative Banner">
     </div>
     <div>
         <h1>About Us</h1>
         <p>The Harbor Light Community Center has been at the heart of our community for over 30 years, offering a wide range of services and programs designed to support and enrich the lives of our residents.</p>
         <p><img src="https://edube.org/uploads/media/default/0001/04/community-center.jpg" hspace="10" vspace="10"></p>
+        <!-- This one uses <h1> that should be use one per page, image spacing attributes are deprecated as well -->
     </div>
     <div>
         <h1>Our Services</h1>
+        <!-- Uses <h1> improperly, plain text description without semantic structuring -->
         <p>From educational workshops and sports leagues to wellness programs and art classes, our services are tailored to meet the diverse needs of our community members.</p>
     </div>
     <div>
@@ -40,7 +49,8 @@
     <div>
         Contact Us
         <p>Have questions or want to get involved? Email us!</p>
+        <!-- Plain text heading, no <footer> or semantic structure, also the email is not clickable -->
     </div>
-    </font>
+    </font>     <!-- Closing deprecated font tag -->
 </body>
 </html>

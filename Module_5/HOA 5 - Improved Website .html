@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+    <!-- For the header section, the semantic <header> with centered logo and welcome text -->
     <header>
         <div class="center-and-space-content">
             <img src="https://edube.org/uploads/media/default/0001/04/logo.jpg" alt="Harbor Light Community Center Logo">
@@ -31,26 +32,30 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#contact">Contact</a></li>
+            <!-- This navigation part uses semantic <nav> with list items and links, which applies accessibility and usability -->
         </ul>
     </nav>
 
-    <!-- Decorative banner marked to be ignored by screen readers -->
+    <!-- The image is present, excluded from assistive technologies via aria-hidden -->
     <div class="banner">
         <img src="https://edube.org/uploads/media/default/0001/04/decorative-banner.jpg" alt="" aria-hidden="true">
     </div>
 
     <main>
+        <!-- Uses semantic <section>, proper heading, and alt text for image -->
         <section id="about">
             <h2>About Us</h2>
             <p>The Harbor Light Community Center has been at the heart of our community for over 30 years, offering a wide range of services and programs designed to support and enrich the lives of our residents.</p>
             <p><img src="https://edube.org/uploads/media/default/0001/04/community-center.jpg" alt="Community Center People"></p>
         </section>
 
+        <!-- The services part is structured and accessiblev with proper headings -->
         <section id="services">
             <h2>Our Services</h2>
             <p>From educational workshops and sports leagues to wellness programs and art classes, our services are tailored to meet the diverse needs of our community members.</p>
         </section>
 
+        <!-- This one as well uses semantic, includes schema.org structured data, <time> element for accessibility and SEO -->
         <section id="events" itemscope itemtype="http://schema.org/Event">
             <h2>Join Our Events</h2>
             <p itemprop="description">Our community center is a hub of activity, hosting events throughout the year. Don't miss our annual summer festival for fun, food, and festivities for all ages.</p>
@@ -64,6 +69,7 @@
         <h2 id="contact">Contact Us</h2>
         <p>Have questions or want to get involved? Email us at <a href="mailto:info@harborlight.com">info@harborlight.com</a>.</p>
         <p>&copy; 2050 Harbor Light Community Center</p>
+        <!-- Lastly, it has semantic <footer> with contact info with clickable email link -->
     </footer>
 </body>
 </html>
