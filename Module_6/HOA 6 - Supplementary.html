@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Declared the charset, name, and content for this one-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continents Reference Table</title>
+    <style>
+
+        /* Added some CSS Styling for the overall design of the website. */
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Arial, sans-serif;
+        }
+
+        h1, p {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Static table is fixed at the bottom. */
+        table {
+            position: fixed;
+            bottom: 0;
+            border: 1px solid #333;
+            border-collapse: collapse;
+            width: 100%;                 /* keep full width for the table */
+            background-color: #fff;
+            box-shadow: 0 -2px 6px rgba(14, 179, 255, 0.2); /* shadow for the table */
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Header color */
+        th {
+            background-color: #2E86C1;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Row striping design */
+        tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #ffffff;
+        }
+
+        /*Added a design as well for the description part*/
+        .description {
+            background: linear-gradient(135deg, #6DD5FA, #2980B9); /* gradient color design */
+            color: white;               
+            text-align: center;
+            padding: 40px 20px;          
+            border-radius: 15px;       
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* subtle shadow */
+            max-width: 900px;          
+            margin: 20px auto;           
+        }
+
+        .description h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .description p {
+            margin: 0;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Applied the given task for the supplementary activty, creating a world continent data table -->
+    <div class="description">
+        <h1>World Continents Data</h1>
+        <p>Explore key facts about the world's continents at a glance!</p>
+        <p>This table shows the size and population of each continent, so you can quickly compare and understand their scale.</p>
+    </div>
+
+    <!-- This is the static reference table that contains the header and the corresponding row data for each continent -->
+    <table>
+        <tr>
+            <th>Continent Name</th>
+            <th>Area (sq km)</th>
+            <th>Population (approx)</th>
+        </tr>
+        <tr>
+            <td>Asia</td>
+            <td>44,579,000</td>
+            <td>4.6 Billion</td>
+        </tr>
+        <tr>
+            <td>Africa</td>
+            <td>30,370,000</td>
+            <td>1.3 Billion</td>
+        </tr>
+        <tr>
+            <td>North America</td>
+            <td>24,709,000</td>
+            <td>579 Million</td>
+        </tr>
+        <tr>
+            <td>South America</td>
+            <td>17,840,000</td>
+            <td>423 Million</td>
+        </tr>
+        <tr>
+            <td>Europe</td>
+            <td>10,180,000</td>
+            <td>746 Million</td>
+        </tr>
+        <tr>
+            <td>Australia/Oceania</td>
+            <td>8,600,000</td>
+            <td>43 Million</td>
+        </tr>
+    </table>
+</body>
+</html>
