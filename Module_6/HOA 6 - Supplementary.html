@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Declared the charset, name, and content for this one-->
+    <!-- We set the following: encoding, page title, favicon, and links external JS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continents Reference Table</title>
+
+    <title>Discover Your World</title>
+    
+    <link rel="icon" href="https://edube.org/uploads/media/default/0001/04/web-favicon.png" type="image/png">
+
+    <!-- Declared the charset, name, and content for this one-->
     <style>
 
         /* Added some CSS Styling for the overall design of the website. */
@@ -24,9 +29,9 @@
             bottom: 0;
             border: 1px solid #333;
             border-collapse: collapse;
-            width: 100%;                 /* keep full width for the table */
+            width: 100%;
             background-color: #fff;
-            box-shadow: 0 -2px 6px rgba(14, 179, 255, 0.2); /* shadow for the table */
+            box-shadow: 0 -2px 6px rgba(14, 179, 255, 0.2);
         }
 
         th, td {
@@ -53,14 +58,14 @@
 
         /*Added a design as well for the description part*/
         .description {
-            background: linear-gradient(135deg, #6DD5FA, #2980B9); /* gradient color design */
-            color: white;               
+            background: linear-gradient(135deg, #6DD5FA, #2980B9);
+            color: white;
             text-align: center;
-            padding: 40px 20px;          
-            border-radius: 15px;       
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* subtle shadow */
-            max-width: 900px;          
-            margin: 20px auto;           
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin: 20px auto;
         }
 
         .description h1 {
@@ -75,11 +80,37 @@
             line-height: 1.5;
         }
 
-
-
     </style>
+
+    <script src="script.js"></script>
 </head>
+
+<!-- For our header we added a display, a main title, simple description, iamges, and links -->
 <body>
+
+    <!-- TOP SECTION WITH DESIGN APPLIED -->
+    <div class="description">
+        <h1>Discover Your World &#x1F30F</h1> 
+        <p>Click the button to learn about the continent you're on and some famous geographical features.</p>
+
+        <!-- The geological button triggers geolocation to detect the continent -->
+        <!-- Also, added an image that shows the map and links to interactive image map -->
+        <!-- The image map has clickable areas for each continent -->
+
+        <button id="discoverLocation">Discover Location</button>
+
+        <img src="https://edube.org/uploads/media/default/0001/04/continents.jpg" usemap="#image-map" alt="World Map">
+
+        <map name="image-map">
+            <area target="" alt="North America" title="North America" id="north-america" coords="386,283,41,17" shape="rect" href="javascript:void(0);">
+            <area target="" alt="South America" title="South America" id="south-america" coords="209,501,358,288" shape="rect" href="javascript:void(0);">
+            <area target="" alt="Europe" title="Europe" id="europe" coords="391,68,505,217" shape="rect" href="javascript:void(0);">
+            <area target="" alt="Africa" title="Africa" id="africa" coords="533,217,387,448" shape="rect" href="javascript:void(0);">
+            <area target="" alt="Asia" title="Asia" id="asia" coords="893,153,506,1" shape="rect" href="javascript:void(0);">
+            <area target="" alt="Australia and Oceania" title="Australia and Oceania" id="australia-and-oceania" coords="679,353,872,480" shape="rect" href="javascript:void(0);">
+        </map>
+    </div>
+
     <!-- Applied the given task for the supplementary activty, creating a world continent data table -->
     <div class="description">
         <h1>Discover Your World &#x1F30F</h1> 
@@ -125,5 +156,108 @@
             <td>43 Million</td>
         </tr>
     </table>
+
+    <!-- JavaScript code provided by your teammate -->
+    <!-- This is not included in the procedure part, as I am a front-end developer. My task is only to handle the design part. -->
+    <!-- This is taken from a simple sample code. -->
+
+    <!-- The logic behind of all this is all about the following:
+     stores continent data, handles the user's clicks, geolocation, and displays info 
+     such as continent and landmarks-->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const continentInfo = {
+        'north-america': {
+          continent: 'North America',
+          river: 'Mississippi River',
+          mountain: 'Denali',
+          landmarks: 'Grand Canyon, Statue of Liberty, Niagara Falls'
+        },
+        'south-america': {
+          continent: 'South America',
+          river: 'Amazon River',
+          mountain: 'Aconcagua',
+          landmarks: 'Machu Picchu, Galapagos Islands'
+        },
+        'europe': {
+          continent: 'Europe',
+          river: 'Danube River',
+          mountain: 'Mont Blanc',
+          landmarks: 'Eiffel Tower, Colosseum, Acropolis of Athens'
+        },
+        'africa': {
+          continent: 'Africa',
+          river: 'Nile River',
+          mountain: 'Mount Kilimanjaro',
+          landmarks: 'Sphinx, Table Mountain'
+        },
+        'asia': {
+          continent: 'Asia',
+          river: 'Yangtze River',
+          mountain: 'Mount Everest',
+          landmarks: 'Great Wall of China, Petra'
+        },
+        'australia-and-oceania': {
+          continent: 'Australia and Oceania',
+          river: 'Murray River',
+          mountain: 'Mount Kosciuszko',
+          landmarks: 'Sydney Opera House, Great Barrier Reef, Uluru'
+        }
+      };
+
+      function displayContinentInfo(continentId) {
+        const info = continentInfo[continentId];
+        if (info) {
+          alert(`Continent: ${info.continent}\nRiver: ${info.river}\nMountain: ${info.mountain}\nLandmarks: ${info.landmarks}`);
+        } else {
+          alert('Information not available');
+        }
+      }
+
+      document.querySelectorAll('area').forEach(area => {
+        area.addEventListener('click', function() {
+          const continentId = this.id;
+          displayContinentInfo(continentId);
+        });
+      });
+
+      const discoverLocationButton = document.getElementById('discoverLocation');
+      
+      discoverLocationButton.addEventListener('click', () => {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const continentId = determineContinentByGeo(latitude, longitude);
+            displayContinentInfo(continentId);
+          }, (error) => {
+            alert("Error obtaining geolocation: " + error.message);
+          });
+        } else {
+          alert("Geolocation is not supported by your browser.");
+        }
+      });
+
+      function determineContinentByGeo(latitude, longitude) {
+        if (latitude > 35 && longitude > -10 && longitude < 40) {
+          return 'europe';
+        } else if (latitude < 0 && longitude > -80 && longitude < -34) {
+          return 'south-america';
+        } else if (latitude > 0 && longitude > -130 && longitude < -70) {
+          return 'north-america';
+        } else if (latitude > 5 && latitude < 60 && longitude > 40 && longitude < 180) {
+          return 'asia';
+        } else if (latitude > -35 && latitude < 35 && longitude > 10 && longitude < 50) {
+          return 'africa';
+        } else if (latitude < -10 && longitude > 110 && longitude < 180) {
+          return 'australia-and-oceania';
+        }
+        alert("Continent could not be determined based on your location.");
+        return null;
+      }
+    });
+    </script>
+
 </body>
 </html>
