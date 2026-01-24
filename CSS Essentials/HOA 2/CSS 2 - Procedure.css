@@ -1,23 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light gray using HEX value */
+    background-color: #f0f0f0;
 }
 
 header {
     background-image: url('https://edube.org/uploads/media/default/0001/04/portfolio.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: cmyk(0, 100, 100, 0); /* Red using CMYK value */
+    background-color: cmyk(0, 100, 100, 0); 
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    color: rgb(0, 128, 0); /* Green using RGB value */
+    color: rgb(0, 128, 0); 
 }
 
 h2 {
-    color: hsl(210, 100%, 50%); /* Blue using HSL value */
+    color: hsl(210, 100%, 50%);
     font-style: italic;
     text-decoration: underline;
 }
