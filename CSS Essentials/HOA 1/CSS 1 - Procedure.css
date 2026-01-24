@@ -68,9 +68,8 @@ header + main {
     border-top: 1px solid gray;
 }
 
-/* Inline styles (highest specificity) */
 h1 {
-    color: blue !important; /* Overridden by inline styles */
+    color: blue !important; 
 }
 
 /* Internal styles */
@@ -80,9 +79,9 @@ p {
 
 /* External styles */
 p {
-    color: red; /* Overridden by internal styles */
+    color: red; 
 }
 
 #header h1 {
-    color: orange !important; /* Overridden by !important */
+    color: orange !important;
 }
