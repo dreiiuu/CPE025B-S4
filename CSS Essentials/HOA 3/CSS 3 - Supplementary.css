@@ -1,161 +1,183 @@
-/* ===== Base Reset & Typography ===== */
-* {
-    box-sizing: border-box;
-}
+    /*
+    I reset the layout defaults and set the base and styled the hero section with a gradient and centered text.
+    I also arranged the products using a grid and card layout as well as hover effects, badges, and hidden facts for interaction.
+    Lastly, I styled tables, the voting form, and the footer for consistency and for the betterment of my output.
+    */
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #fff8f0;
-    color: #333;
-}
 
-/* ===== HERO ===== */
-.hero {
-    background: linear-gradient(135deg, #f4c16d, #f7a072);
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
+    /*  Base Reset & Typography  */
+    * {
+        box-sizing: border-box;
+    }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin: 0;
-}
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #fff8f0;
+        color: #333;
+    }
 
-.hero-text h2 {
-    font-size: 28px;
-    margin: 5px 0;
-}
+    /*  HERO  */
+    .hero {
+        background: linear-gradient(135deg, #f4c16d, #f7a072);
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
 
-.hero-text p {
-    font-size: 16px;
-    margin-top: 5px;
-}
+    .hero-text h1 {
+        font-size: 48px;
+        margin: 0;
+    }
 
-/* ===== PRODUCT GRID ===== */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 40px;
-}
+    .hero-text h2 {
+        font-size: 28px;
+        margin: 5px 0;
+    }
 
-/* ===== PRODUCT CARD ===== */
-.product-card {
-    background-color: #fff3e6;
-    padding: 20px;
-    border: 2px solid #f4c16d;
-    border-radius: 10px;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    .hero-text p {
+        font-size: 16px;
+        margin-top: 5px;
+    }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+    /*  PRODUCT GRID  */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 40px;
+    }
 
-.product-card img {
-    width: 100%;
-    border-radius: 6px;
-}
+    /*  PRODUCT CARD  */
+    .product-card {
+        background-color: #fff3e6;
+        padding: 20px;
+        border: 2px solid #f4c16d;
+        border-radius: 10px;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-/* ===== BADGE ===== */
-.badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f75a2a;
-    color: white;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 5px;
-}
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
 
-/* ===== CONTENT ===== */
-.product-card h3 {
-    font-size: 22px;
-    margin-top: 15px;
-}
+    .product-card img {
+        width: 100%;
+        border-radius: 6px;
+    }
 
-.description {
-    font-size: 14px;
-    line-height: 1.6;
-}
+    /*  BADGE  */
+    .badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #f75a2a;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
 
-/* ===== TABLE ===== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 13px;
-}
+    /*  CONTENT  */
+    .product-card h3 {
+        font-size: 22px;
+        margin-top: 15px;
+    }
 
-th, td {
-    border: 1px solid #f4c16d;
-    padding: 8px;
-}
+    .description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
 
-th {
-    background-color: #ffd9a6;
-}
+    /*  TABLE  */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 13px;
+    }
 
-/* ===== FACT VISIBILITY ===== */
-.fact {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #555;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
+    th, td {
+        border: 1px solid #f4c16d;
+        padding: 8px;
+    }
 
-.product-card:hover .fact {
-    opacity: 1;
-}
+    th {
+        background-color: #ffd9a6;
+    }
 
-/* ===== FORM ===== */
-.vote-section {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-}
+    /*  FACT VISIBILITY  */
+    .fact {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #555;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
 
-form {
-    background-color: #fff3e6;
-    padding: 25px;
-    border: 1px solid #f4c16d;
-    border-radius: 10px;
-    width: 300px;
-}
+    .product-card:hover .fact {
+        opacity: 1;
+    }
 
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-}
+    /*  FORM  */
+    .vote-section {
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+    }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #f75a2a;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    form {
+        background-color: #fff3e6;
+        padding: 25px;
+        border: 1px solid #f4c16d;
+        border-radius: 10px;
+        width: 300px;
+    }
 
-button:hover {
-    background-color: #e04b20;
-}
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
 
-/* ===== FOOTER ===== */
-footer {
-    background-color: #ffd9a6;
-    text-align: center;
-    padding: 10px;
-    font-size: 13px;
-}
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #f75a2a;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #e04b20;
+    }
+
+    /* FOOTER */
+    footer {
+        background-color: #ffd9a6;
+        text-align: center;
+        padding: 10px;
+        font-size: 13px;
+        color: #4a3b2a;
+        line-height: 1.6;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* Footer links */
+    footer a {
+        color: #6b4f2c;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 0 6px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }

@@ -1,3 +1,11 @@
+/*
+I set the base font and reset body spacing.
+From the headera and footer, I fixed it to avoid overlap.
+I style base from the procedure to create the product card, image, and "New" badge layout.
+Then, I formatted the table with borders and hover effects.
+I center and style the contact form and its inputs.
+*/
+
 /* Base styles */
 body {
     font-family: Arial, sans-serif;
@@ -14,6 +22,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 /* Footer styles */
@@ -24,6 +33,13 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1000; 
+}
+
+/* Prevent content from hiding under fixed header/footer, like an error issue from the procedure */
+main {
+    margin-top: 100px;   
+    margin-bottom: 60px; 
 }
 
 /* Product styles */
@@ -62,7 +78,8 @@ footer {
     border-collapse: collapse;
 }
 
-.product-specs th, .product-specs td {
+.product-specs th,
+.product-specs td {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -80,7 +97,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .contact-form form {
