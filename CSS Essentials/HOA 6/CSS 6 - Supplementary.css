@@ -1,0 +1,147 @@
+/* Base & Typography */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #111;
+    color: #f2f2f2;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, #000, #222);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1.8s ease, transform 1s ease;
+}
+
+header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header h1 {
+    font-size: 2.6rem;
+    margin: 0;
+    color: #e0c97d;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #000;
+    padding: 12px 0;
+    text-align: center;
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    display: inline-block;
+    margin: 0 18px;
+}
+.navbar a {
+    text-decoration: none;
+    color: #e0c97d;
+    font-weight: bold;
+}
+.navbar a:hover {
+    color: #fff;
+}
+
+/* About */
+.site-description {
+    padding: 20px 40px;
+    text-align: center;
+}
+
+/* Perfume Grid */
+.perfume-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px;
+}
+
+.perfume-card {
+    background: #222;
+    border-radius: 10px;
+    width: 260px;
+    padding: 18px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards;
+}
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.perfume-card img {
+    width: 100%;
+    border-radius: 8px;
+    animation: rotate 14s linear infinite;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.perfume-card h3 {
+    margin: 10px 0;
+    color: #e0c97d;
+}
+
+.perfume-card p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+}
+
+.perfume-card ul {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+}
+
+/* Buy Button */
+.buy-now {
+    background-color: #e0c97d;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    color: #111;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+.buy-now:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 14px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .perfume-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
