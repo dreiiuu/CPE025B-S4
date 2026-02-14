@@ -1,4 +1,11 @@
-/* Base styles */
+/* 
+    The CSS sets the base font, removes default margins and padding, and defines colors for header, navigation, and footer.
+    It styles project cards with background, border, padding, and shadow to make them distinct.
+    The grid layout organizes the project cards in three columns with spacing.
+    Hover effects and responsive rules adjust the layout and navigation for smaller screens.
+*/
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
