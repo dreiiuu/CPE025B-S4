@@ -79,6 +79,8 @@ header p {
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1s forwards;
+    overflow: hidden; /* Add this */
+
 }
 @keyframes fadeUp {
     to {

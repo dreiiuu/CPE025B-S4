@@ -1,4 +1,10 @@
-/* Base styles */
+/*
+    I styled the page layout and elements.
+    The header goes in, the product image rotates, and the button has a hover effect.
+    Feature items slide in one by one.
+    The footer has a dark background with centered text.
+*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
