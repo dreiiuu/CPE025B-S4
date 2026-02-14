@@ -1,4 +1,11 @@
-/* Base & Typography */
+/*
+    I styled the page with a dark and gold theme for a luxurious look.
+    Header fades in and text is centered. Navigation links have hover color changes.
+    Product cards fade in, images rotate, and buttons scale on hover.
+    Feature info is neatly displayed with spacing, and the layout is responsive for smaller screens.
+    Footer is dark with centered text and links.
+*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -131,7 +138,6 @@ header p {
     transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     background-color: #000;
     text-align: center;
@@ -140,10 +146,11 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .perfume-gallery {
-        flex-direction: column;
-        align-items: center;
-    }
+footer a {
+    color: #dac23a;      
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #5f0202;       
 }
