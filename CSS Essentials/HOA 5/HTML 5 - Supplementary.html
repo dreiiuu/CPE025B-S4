@@ -1,0 +1,112 @@
+<!-- 
+    For the head part, the page has basic info like character encoding, title, and a short description.
+    It also links the CSS file that handles all the styling and layout.
+    The header contains the logo and main navigation which uses a list for easy access to Home and Products.
+    Flexbox arranges the logo and links neatly in a row.
+    The hero section shows the sneaker collection with a bold heading and short description.
+    The products section displays all my chosen sneakers having each product card shows an image, name, brand, description, price, and a button.
+    The footer contains copyright info and a link to the GitHub profile. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban Sole | Sneaker Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Urban Sole premium sneaker collection featuring Vans, Nike, Reebok, On Cloud, and Anta.">
+    <link rel="stylesheet" href="CSS 5 - Supplementary.css">
+</head>
+<body>
+
+<header id="home">
+    <div class="logo">Urban Sole</div>
+
+    <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Premium Sneaker Collection</h1>
+    <p>Performance meets street culture in our curated lineup of global sneaker brands.</p>
+</section>
+
+<main>
+
+<section id="products" class="products">
+
+    <article class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpz0iRcj5jPK2rnHMwQ2nKsgAhUMah2WmjQg&s" alt="Vans Old Skool Sneakers">
+        <h2>Vans Old Skool</h2>
+        <p class="brand">Vans</p>
+        <p class="description">
+            The Vans Old Skool delivers classic skate heritage styling with durable suede and canvas construction.
+            Its reinforced toe caps and padded collars provide long-lasting comfort and reliable board control.
+        </p>
+        <p class="price">₱4,298</p>
+        <button type="button">Add to Cart</button>
+    </article>
+
+    <article class="product-card">
+        <img src="https://midwaysports.com/cdn/shop/files/NikeAirMax270Women_sShoes_5_d402e1fa-a983-4275-9b00-d4f9e3b0a34e.png?v=1762197927&width=2048" alt="Nike Air Max 270">
+        <h2>Nike Air Max 270</h2>
+        <p class="brand">Nike</p>
+        <p class="description">
+            The Nike Air Max 270 features the brand’s largest heel Air unit for maximum cushioning and bold visual impact.
+            Its breathable mesh upper and modern silhouette make it ideal for both athletic performance and daily wear.
+        </p>
+        <p class="price">₱8,395</p>
+        <button type="button">Add to Cart</button>
+    </article>
+
+    <article class="product-card">
+        <img src="https://sportscentral.ph/cdn/shop/files/688990f5d7f1a-SCP-10826623-15257_2048x.jpg?v=1770690378" alt="Reebok Classic Leather">
+        <h2>Reebok Classic Leather</h2>
+        <p class="brand">Reebok</p>
+        <p class="description">
+            The Reebok Classic Leather combines minimalist design with premium soft leather construction.
+            Its cushioned midsole and timeless profile make it suitable for casual outfits and everyday comfort.
+        </p>
+        <p class="price">₱5,200</p>
+        <button type="button">Add to Cart</button>
+    </article>
+
+    <article class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwQr2Rf52WbcojtY9_-DmxOjCL3GPRTCGYLw&s" alt="On Cloud 5 Running Shoes">
+        <h2>On Cloud 5</h2>
+        <p class="brand">On</p>
+        <p class="description">
+            The On Cloud 5 integrates CloudTec® cushioning technology for lightweight impact absorption.
+            Its engineered mesh upper and speed-lacing system ensure comfort and efficiency during high-performance runs.
+        </p>
+        <p class="price">₱9,990</p>
+        <button type="button">Add to Cart</button>
+    </article>
+
+    <article class="product-card">
+        <img src="https://nbastore.com.ph/cdn/shop/files/1_d0e25efe-31c2-46e0-a676-b6c5fea7ad08_800x.jpg?v=1755494668" alt="Anta KT 7 Basketball Shoes">
+        <h2>Anta KT 7</h2>
+        <p class="brand">Anta</p>
+        <p class="description">
+            The Anta KT 7 is engineered for explosive basketball performance with responsive midsole cushioning.
+            Its reinforced lateral support and structured design provide stability during rapid directional movements.
+        </p>
+        <p class="price">₱6,500</p>
+        <button type="button">Add to Cart</button>
+    </article>
+
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Urban Sole. All Rights Reserved.</p>
+    <p>Check my GitHub: <a href="https://github.com/dreiiuu" target="_blank">github.com/dreiiuu</a></p>
+</footer>
+
+</body>
+</html>
