@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Study Buddy Survey (Preliminary Exam)</title>
+<style>
+    body {
+        background-color: #cdc9c9;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    h1 {
+        color: #984242;
+    }
+    label {
+        display: block;
+        margin-top: 2px;
+        font-weight: bold;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }   
+</style>
+</head>
+
+<body>
+    <h1 id="title">Study Buddy Survey!</h1>
+    <p id="description">Welcome to Study Buddy Survey! 
+        Feel free to share your honest and feedback about the best and suggested program that you encounter!.</p>
+    <p>Please describe how well or not is your chosen program!</p>
+
+    <form id="survey-form">
+
+        <!-- Input for Name -->
+        <div>
+            <label id = name-label for = name> Name: </label>
+            <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+        </div>
+
+        <!-- Input for Email -->
+        <div>
+            <label id = email-label for = email> Email: </label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+        </div>
+
+        <!-- Input for Priority ID -->
+        <div>
+            <label id = number-label for = number> Priority ID: </label>
+            <input type="number" id="number" min="1" max="100" placeholder="ID" required>
+        </div>
+
+        <!-- Program Selection (Dropdown) of the user -->
+        <div>
+            <p>What program is the most likely to be the best from your experience?</p>
+            <label for="dropdown"></label>
+            <select id="dropdown" required>
+                <option value="Please select your chosen program">Please select your chosen program.</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Food Technology">Food Technology</option>
+                <option value="MedTech">MedTech</option>
+                <option value="Nursing">Nursing</option>
+                <option value="Culinary Arts">Culinary Arts</option>
+                <option value="Architecture">Architecture</option>
+            </select>
+        </div><br>
+
+        <!-- Radio Buttons for Worthiness -->
+        <div>
+            <label>From the chosen program, was it worth it?</label><br>
+            <input type="radio" id="y" name="worth" value="yes"><label for="y" >Yes</label>
+            <input type="radio" id="n" name="worth" value="no"><label for="n" >No</label>
+        </div><br>
+
+        <!-- Radio Buttons for Risk of time -->
+        <div>
+            <label>It is worth the risk of your time?</label><br>
+            <input type="radio" id="g" name="worth" value="yes"><label for="g" >Yes</label>
+            <input type="radio" id="h" name="worth" value="no"><label for="h" >No</label>
+        </div><br>
+
+        <!-- Checkbox for Programs Gone Through -->
+        <div>
+            <label>Please select all the programs that you have gone through?</label><br>
+            <input type="checkbox" id="a" name="worth" value="yes"><label for="a" >Psychology</label><br>
+            <input type="checkbox" id="b" name="worth" value="no"><label for="b" >Food Technology</label><br>
+            <input type="checkbox" id="c" name="worth" value="no"><label for="c" >MedTech</label><br>
+            <input type="checkbox" id="d" name="worth" value="no"><label for="d" >Nursing</label><br>
+            <input type="checkbox" id="e" name="worth" value="no"><label for="e" >Culinary Arts</label><br>
+            <input type="checkbox" id="f" name="worth" value="no"><label for="f" >Architecture</label><br>
+        </div><br>
+        
+        <!-- Textarea to share their own thoughts -->
+        <div>
+            <label for="feedback">Please let us here your thoughts!</label><br>
+            <textarea id="feedback" placeholder="Type here..."></textarea>
+        </div><br>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
