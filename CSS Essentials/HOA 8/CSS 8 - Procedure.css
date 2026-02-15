@@ -1,0 +1,56 @@
+/*
+    In the CSS, I set the body font, size, color, and removed default spacing. 
+    Header and footer get light blue background, padding, and centered text. 
+    Headings are bigger. List items have rounded corners, padding, margin, and a light green background. 
+    Example text has rounded corners, padding, and a pink background. 
+    All styles follow the structure of the HTML sections.
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #007bff;
+  margin: 0;
+  padding: 0;
+}
+
+.header, .footer {
+  background-color: rgb(204, 228.6, 255);
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1, .footer p {
+  font-size: 2em;
+}
+
+main {
+  padding: 20px;
+}
+main .about h2 {
+  font-size: 1.5em;
+}
+main .about p {
+  font-size: 16px;
+}
+main .features h2 {
+  font-size: 1.5em;
+}
+main .features .feature-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+main .features .feature-list li {
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: rgb(147, 230, 227);
+}
+main .example h2 {
+  font-size: 1.5em;
+}
+main .example .example-text {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(252, 164, 164);
+}
