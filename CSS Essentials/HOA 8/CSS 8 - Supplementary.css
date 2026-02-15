@@ -1,3 +1,15 @@
+/*
+This is my Ultimate Mood Tracker CSS.
+
+I set the body font, size, and gradient background.  
+Header has gradient, bold text, and spacing.  
+Forms have rounded inputs, hover and focus effects, and styled buttons.  
+Mood entry cards use glassmorphism, gradient backgrounds, hover lift, shadow, and fade-in animation.  
+Footer has gradient, spacing, and a GitHub link.  
+I used Flexbox and Grid to organize layout and keep it responsive.  
+*/
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +19,7 @@
 body {
   font-family: "Arial, sans-serif";
   font-size: 16px;
-  background: linear-gradient(135deg, #ffd1d1, rgb(157.5330396476, 227.4669603524, 222.5110132159));
+  background: linear-gradient(135deg, white, rgb(197.2995594714, 238.7004405286, 235.7665198238));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,7 +46,7 @@ main .input-section {
 main .input-section h2 {
   font-size: 2.2em;
   margin-bottom: 20px;
-  color: #ff3838;
+  color: #be6969;
 }
 main .input-section form {
   display: flex;
@@ -75,14 +87,12 @@ main .input-section form button {
   font-weight: bold;
   font-size: 1em;
   cursor: pointer;
+  width: fit-content;
   transition: all 0.4s ease;
 }
 main .input-section form button:hover {
   transform: scale(1.08);
   filter: brightness(1.2);
-}
-main .input-section form button {
-  width: fit-content;
 }
 main .entries-section h2 {
   font-size: 2.2em;
@@ -95,29 +105,14 @@ main .entries-section .entries-grid {
   gap: 25px;
 }
 main .entries-section .entries-grid .entry-card {
-  background: rgba(0, 255, 140, 0.2);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
-}
-main .entries-section .entries-grid .entry-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-main .entries-section .entries-grid .entry-card {
   animation: fade-in 0.8s ease forwards;
 }
-main .entries-section .entries-grid .entry-card.happy {
-  background: rgba(0, 255, 140, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
-}
-main .entries-section .entries-grid .entry-card.happy:hover {
+main .entries-section .entries-grid .entry-card:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
@@ -126,32 +121,8 @@ main .entries-section .entries-grid .entry-card.happy {
   color: #fff;
 }
 main .entries-section .entries-grid .entry-card.neutral {
-  background: rgba(255, 215, 0, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
-}
-main .entries-section .entries-grid .entry-card.neutral:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-main .entries-section .entries-grid .entry-card.neutral {
   background: linear-gradient(135deg, #ffd700, #ffe766);
   color: #333;
-}
-main .entries-section .entries-grid .entry-card.sad {
-  background: rgba(51, 153, 255, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
-}
-main .entries-section .entries-grid .entry-card.sad:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 main .entries-section .entries-grid .entry-card.sad {
   background: linear-gradient(135deg, #3399ff, #99ccff);
@@ -172,13 +143,41 @@ main .entries-section .entries-grid .entry-card .entry-note {
 }
 
 footer.footer {
-  padding: 25px;
+  padding: 30px;
   text-align: center;
   background: linear-gradient(135deg, rgb(255, 81.5, 81.5), rgb(51.1013215859, 180.8986784141, 171.7004405286));
   color: white;
   font-weight: bold;
   font-size: 1em;
   letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+footer.footer p {
+  margin: 0;
+}
+footer.footer .github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 18px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 0.95em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+footer.footer .github-link:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fade-in {
