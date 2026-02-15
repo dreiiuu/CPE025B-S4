@@ -1,3 +1,5 @@
+This is my CSS file before applying the Sass approach to my code.
+
 * {
   box-sizing: border-box;
   margin: 0;
