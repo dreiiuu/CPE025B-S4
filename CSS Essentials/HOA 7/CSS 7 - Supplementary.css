@@ -1,7 +1,8 @@
-/*
-Styles body, hero, cards, table, forms, accordion, and footer. 
-Hero is dark with white text. Cards scale on hover. 
-Forms highlight on focus. Table is centered. Footer is dark with white text and styled links.
+/* 
+Styles the body, hero section, cards, table, forms, accordion, and footer. 
+The hero section is dark with white text. Cards scale on hover. Forms highlight on focus. 
+The table is centered. The footer is dark with white text and styled links. 
+Add this even though Bootstrap has already been applied, just to add a little more design to it. 
 */
 
 
