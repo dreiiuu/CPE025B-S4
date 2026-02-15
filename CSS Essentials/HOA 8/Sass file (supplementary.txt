@@ -1,0 +1,192 @@
+$font-family: 'Arial, sans-serif';
+$base-font: 16px;
+$primary-color: #ff6b6b; // Red-Pink gradient base
+$secondary-color: #4ecdc4; // Mint gradient
+$happy-color: #00ff8c;
+$neutral-color: #ffd700;
+$sad-color: #3399ff;
+$border-radius: 20px;
+$padding-base: 20px;
+$transition-speed: 0.4s;
+$card-blur: 15px;
+
+@mixin glass-card($bg-color) {
+  background: rgba($bg-color, 0.2);
+  backdrop-filter: blur($card-blur);
+  border-radius: $border-radius;
+  padding: $padding-base;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: all $transition-speed ease;
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  }
+}
+
+@mixin button-style {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 25px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all $transition-speed ease;
+
+  &:hover {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+  }
+}
+
+@mixin input-style {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  transition: all $transition-speed ease;
+  
+  &:focus {
+    box-shadow: 0 0 15px rgba($primary-color, 0.6);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $base-font;
+  background: linear-gradient(135deg, lighten($primary-color, 20%), lighten($secondary-color, 20%));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header.navbar {
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  color: white;
+  font-size: 2.8em;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+
+  .input-section {
+    margin-bottom: 50px;
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: darken($primary-color, 10%);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        input, select, textarea {
+          @include input-style;
+        }
+
+        textarea {
+          min-height: 100px;
+          resize: none;
+        }
+      }
+
+      button {
+        @include button-style;
+        width: fit-content;
+      }
+    }
+  }
+
+  .entries-section {
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 25px;
+      color: darken($secondary-color, 15%);
+    }
+
+    .entries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+
+      .entry-card {
+        @include glass-card($happy-color);
+        animation: fade-in 0.8s ease forwards;
+
+        &.happy {
+          @include glass-card($happy-color);
+          background: linear-gradient(135deg, $happy-color, lighten($happy-color, 20%));
+          color: #fff;
+        }
+        &.neutral {
+          @include glass-card($neutral-color);
+          background: linear-gradient(135deg, $neutral-color, lighten($neutral-color, 20%));
+          color: #333;
+        }
+        &.sad {
+          @include glass-card($sad-color);
+          background: linear-gradient(135deg, $sad-color, lighten($sad-color, 20%));
+          color: #fff;
+        }
+
+        .entry-date {
+          font-weight: bold;
+          margin-bottom: 8px;
+          font-size: 0.95em;
+        }
+
+        .entry-mood {
+          font-size: 1.8em;
+          margin-bottom: 10px;
+        }
+
+        .entry-note {
+          font-size: 1em;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+footer.footer {
+  padding: 25px;
+  text-align: center;
+  background: linear-gradient(135deg, darken($primary-color, 5%), darken($secondary-color, 10%));
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
