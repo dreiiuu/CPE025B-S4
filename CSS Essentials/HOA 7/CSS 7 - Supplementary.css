@@ -1,3 +1,10 @@
+/*
+Styles body, hero, cards, table, forms, accordion, and footer. 
+Hero is dark with white text. Cards scale on hover. 
+Forms highlight on focus. Table is centered. Footer is dark with white text and styled links.
+*/
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #fefefe;
