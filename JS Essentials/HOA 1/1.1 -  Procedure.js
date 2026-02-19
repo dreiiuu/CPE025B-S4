@@ -10,7 +10,7 @@ let email2 = "posuere.vulputate@sed.com";
 
 let name3 = "Helen Richards";
 let phone3 = "0800 1111";
-let email3 = "libero";
+let email3 = "libero@convallis.edu";
 
 // We must only display the first and last contact
 console.log(name1 + "/" + phone1 + "/" + email1);
