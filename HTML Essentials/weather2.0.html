@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Fetch Test - Async/Await</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px; }
+      .city { margin-bottom: 20px; }
+      .warning { color: red; font-weight: bold; }
+    </style>
+  </head>
+  <body>
+    <h1>Weather Data (Async/Await)</h1>
+    <div id="output"></div>
+
+    <script>
+      const print = (text, isWarning=false) => {
+          const out = document.getElementById('output');
+          const p = document.createElement('p');
+          p.innerHTML = text;
+          if(isWarning) p.classList.add('warning');
+          out.appendChild(p);
+      };
+
+      const mockWeatherServer = (url) => {
+          let params = new URL(url).searchParams;
+          let city = params.get('city');
+          let info = params.get('info') || 'all';
+
+          const data = {
+              "Berlin": { wind:{speed:16,deg:117}, clouds:0, temp:10, precipitation:0 },
+              "Oslo": { wind:{speed:8,deg:170}, clouds:0, temp:0, precipitation:0 },
+              "Yakutsk": { wind:{speed:0,deg:0}, clouds:0, temp:-40, precipitation:0 }
+          };
+
+          return new Promise(resolve => {
+              resolve({ json: () => Promise.resolve({ city: city, weather: data[city] || {} }) });
+          });
+      };
+
+      // Async/Await version of getWeather
+      const getWeather = async (location, info) => {
+          const maxWindSpeed = 15;
+          const minTemp = -20;
+          const cities = Array.isArray(location) ? location : [location];
+
+          const showWindInfo = (weather) => {
+              print(`WIND: ${weather.wind.speed} m/s, ${weather.wind.deg} deg`);
+              if(weather.wind.speed > maxWindSpeed) print(`WARNING! Wind speed over ${maxWindSpeed} m/s`, true);
+          };
+
+          const showInfo = (weather, type) => {
+              print(`${type.toUpperCase()}: ${weather[type]} ${type==='temp'?'C':'%'}`);
+              if(type==='temp' && Number(weather.temp)<minTemp) print(`WARNING! Temperature below ${minTemp} degrees`, true);
+          };
+
+          try {
+              const promises = cities.map(city =>
+                  mockWeatherServer(`http://localhost:3000/weather?city=${city}${info && info!=='all' ? '&info='+info : ''}`)
+              );
+
+              const responses = await Promise.all(promises);
+              const data = await Promise.all(responses.map(r => r.json()));
+
+              for(const cityData of data){
+                  print(`<strong>CITY: ${cityData.city}</strong>`);
+                  if(cityData.weather){
+                      for(const key in cityData.weather){
+                          if(key==='wind') showWindInfo(cityData.weather);
+                          else showInfo(cityData.weather,key);
+                      }
+                  } else {
+                      print('Weather unknown', true);
+                  }
+              }
+
+          } catch(e) {
+              print(`Error: ${e.message}`, true);
+          }
+      };
+
+      // Test calls
+      getWeather('Berlin','wind');
+      getWeather(['Oslo','Yakutsk'],'all');
+    </script>
+  </body>
+</html>
