@@ -26,7 +26,6 @@
           out.appendChild(p);
       };
 
-      // Mock REST service (simulates fetch to localhost)
       const mockWeatherServer = (url) => {
           let params = new URL(url).searchParams;
           let city = params.get('city');
@@ -43,7 +42,6 @@
           });
       };
 
-      // getWeather function following scenario strictly
       const getWeather = (location, info) => {
           const maxWindSpeed = 15;
           const minTemp = -20;
@@ -79,7 +77,6 @@
               .catch(e => print(`Error: ${e.message}`, true));
       };
 
-      // Test calls exactly from scenario
       getWeather('Berlin','wind');
       getWeather(['Oslo','Yakutsk'],'all');
     </script>
